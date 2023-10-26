@@ -1,10 +1,25 @@
 /* Title.css */
 
+.Title {
+  background-color: #d3be82;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.Title img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
 .title-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d3be81; /* Background color */
+  background-color: #d3be82; /* Background color */
   padding: 20px;
   border-radius: 10px; /* Rounded corners */
 }

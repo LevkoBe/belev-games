@@ -1,0 +1,14 @@
+/* Categories.css */
+.Categories {
+  background-color: #d3be82;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.Categories h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Add any other styles you need for the Categories component */

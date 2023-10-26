@@ -3,6 +3,9 @@ import GameCell from "./games/GameCell";
 import Title from "./Title";
 
 const Shelf = ({ activeCategory }) => {
+  if (activeCategory == null) {
+    return <Title title="Select a category"></Title>;
+  }
   return (
     <div>
       <Title title={activeCategory.title}></Title>

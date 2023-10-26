@@ -1,0 +1,42 @@
+/* Store.css */
+.store {
+  background-color: #d3be82;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  display: flex; /* Use flex display to arrange components in a row */
+  flex-direction: row; /* Arrange components horizontally */
+
+  /* Adjust the width as needed */
+}
+
+.StoreContent {
+  flex: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: row; /* Arrange Categories and Shelf in a row */
+  width: 100%; /* Ensure full width */
+  padding: 10px; /* Add some padding between components */
+}
+
+.Categories {
+  background-color: #d3be82;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1; /* Takes up 30% of the available space */
+}
+
+.Shelf {
+  background-color: #d3be82;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  flex: 2; /* Takes up 70% of the available space */
+}
+
+.Store h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Add any other styles you need for the Store component */

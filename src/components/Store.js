@@ -5,6 +5,7 @@ import games from "./games/games";
 import categoriesList from "./categories/categoriesList";
 import Shelf from "./Shelf";
 import Category from "./categories/CategoryClass";
+import "./Store.css";
 
 const Store = () => {
   const [categories, setCategories] = useState([]);
@@ -20,11 +21,13 @@ const Store = () => {
     setCategories(newCategories);
   }, []);
   return (
-    <div>
+    <>
       <Navigation />
-      {/* <Categories categories={categories} onCategorySelection={setActiveCategory} /> */}
-      {/* <Shelf activeCategory={activeCategory} /> */}
-    </div>
+      <div className="store">
+        <Categories categories={categories} onCategorySelection={setActiveCategory} />
+        <Shelf activeCategory={activeCategory} />
+      </div>
+    </>
   );
 };
 
