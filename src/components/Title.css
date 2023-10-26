@@ -1,0 +1,26 @@
+/* Title.css */
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3be81; /* Background color */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.title-box {
+  display: flex;
+  align-items: center;
+}
+
+.title-image {
+  width: 100px; /* Adjust the image width as needed */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.title-text {
+  color: #fff; /* Text color */
+  font-size: 24px;
+  margin: 0;
+}
