@@ -1,16 +1,23 @@
 import React from "react";
 import Title from "./Title";
+import { Link } from "react-router-dom";
+
 import "./styles/Navigation.css";
 
 const Navigation = () => {
   return (
-    // onTitleClick = {homepage}
     <nav className="navbar">
       <div style={{ width: "30px", cursor: "pointer" }}>
-        <Title scaleDown={0.5} />
+        <Link to="/">
+          <Title scaleDown={0.5} />
+        </Link>
       </div>
-      <button>Games</button>
-      <button>About</button>
+      <Link to="/profile">
+        <button>Profile</button>
+      </Link>
+      <Link to="/about">
+        <button>About</button>
+      </Link>
     </nav>
   );
 };
