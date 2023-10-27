@@ -6,7 +6,6 @@ const GameCell = ({ game }) => {
     <div className="game-cell">
       <div className="game-details">
         <h3 style={{ color: "#153009" }}>{game.title}</h3>
-        {console.log(game.image)}
         <img src={game.image} alt={game.title} />
         <p className="description">{game.description}</p>
       </div>

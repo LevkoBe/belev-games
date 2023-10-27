@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "./Navigation";
 import Categories from "./categories/Categories";
-import games from "./games/games";
-import categoriesList from "./categories/categoriesList";
+import games from "./lists/games";
+import categoriesList from "./lists/categoriesList";
 import Shelf from "./Shelf";
 import Category from "./categories/CategoryClass";
 import "./styles/Store.css";
@@ -17,7 +17,6 @@ const Store = () => {
       return new Category(category, correspondingGames);
     });
     newCategories = newCategories.filter((category) => category.games.length !== 0);
-    console.log(newCategories);
     setCategories(newCategories);
   }, []);
   return (

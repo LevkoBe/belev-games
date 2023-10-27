@@ -1,4 +1,4 @@
-import GameClass from "./GameClass";
+import GameClass from "../games/GameClass";
 
 // image, title, description, playerNumbers, category
 

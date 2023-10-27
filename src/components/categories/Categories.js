@@ -10,7 +10,7 @@ const Categories = ({ categories, onCategorySelection }) => {
 
   return (
     <div className="categories-container">
-      <Title title="Categories" />
+      <Title title="Categories" onTitleClick={handleCategorySelection} />
       {categories.map((category, index) => (
         <Category key={index} category={category} onCategoryClick={handleCategorySelection} />
       ))}
