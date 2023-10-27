@@ -1,5 +1,8 @@
+* {
+  font-family: "Libre Baskerville";
+}
+
 body {
-  font-family: "Noto Serif Old Uyghur";
   margin: 0;
   background-image: url("./background.png");
 }
