@@ -4,7 +4,7 @@ import Categories from "./categories/Categories";
 import games from "./lists/games";
 import categoriesList from "./lists/categoriesList";
 import Shelf from "./Shelf";
-import Category from "./categories/CategoryClass";
+import Category from "../classes/CategoryClass";
 import "./styles/Store.css";
 
 const Store = () => {
