@@ -8,7 +8,9 @@ const Shelf = ({ activeCategory }) => {
   }
   return (
     <div>
-      <Title title={activeCategory.title}></Title>
+      <div>
+        <Title title={activeCategory.title} />
+      </div>
       {activeCategory.games.map((game, index) => (
         <GameCell key={index} game={game}></GameCell>
       ))}

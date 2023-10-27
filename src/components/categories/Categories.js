@@ -1,14 +1,15 @@
 import React from "react";
 import Category from "./Category";
 import Title from "../Title";
-import "../Categories.css";
+import "../styles/Categories.css";
 
 const Categories = ({ categories, onCategorySelection }) => {
   function handleCategorySelection(category) {
     onCategorySelection(category);
   }
+
   return (
-    <div>
+    <div className="categories-container">
       <Title title="Categories" />
       {categories.map((category, index) => (
         <Category key={index} category={category} onCategoryClick={handleCategorySelection} />
