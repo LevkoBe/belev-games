@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Store />} />
           <Route path="/profile" element={<Profile />} />
-          {/* Add more routes for other pages as needed */}
+          {/* <Route path="/about" element={<About />} /> */}
         </Routes>
       </div>
     </Router>
