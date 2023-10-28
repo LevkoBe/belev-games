@@ -1,8 +1,8 @@
 // Profile.js
 import React from "react";
-import Settings from "./Settings";
 import House from "./House";
 import Navigation from "../Navigation";
+import Account from "./Account";
 
 const Profile = () => {
   return (
@@ -10,7 +10,7 @@ const Profile = () => {
       <Navigation pathname="/profile" />
       <div style={{ display: "flex" }}>
         <div style={{ flex: "30%" }}>
-          <Settings />
+          <Account />
         </div>
         <div style={{ flex: "70%" }}>
           <House />

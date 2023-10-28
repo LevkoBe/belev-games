@@ -6,3 +6,25 @@ body {
   margin: 0;
   background-image: url("./background.png");
 }
+
+input {
+  background-color: #fff4d3ba;
+  border-width: thick;
+  border-style: double;
+  border-color: #153009;
+  border-radius: 10px;
+  color: #153009;
+  outline: none;
+  padding: 10px;
+}
+
+input::placeholder {
+  color: #153009;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #153009, #d3be82);
+  margin: 20px 0;
+}

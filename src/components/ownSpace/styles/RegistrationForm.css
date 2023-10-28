@@ -34,21 +34,6 @@ label {
   color: #d3be82;
 }
 
-.registration-input {
-  background-color: #fff4d3ba;
-  border-width: thick;
-  border-style: double;
-  border-color: #153009;
-  border-radius: 10px;
-  color: #153009;
-  outline: none;
-  padding: 10px;
-}
-
-.registration-input::placeholder {
-  color: #153009;
-}
-
 .buttons {
   display: flex;
   flex-direction: row;

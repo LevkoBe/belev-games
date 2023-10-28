@@ -1,4 +1,4 @@
-import UserClass from "./UserClass";
+import UserClass from "../../classes/UserClass";
 
 const users = [
   new UserClass("user1", "password1", "user1@example.com"),

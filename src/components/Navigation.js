@@ -31,7 +31,7 @@ const Navigation = () => {
           <button>About</button>
         </Link>
       )}
-      <button onClick={openRegistrationForm}>Sign In</button>
+      {pathname !== "/profile" && <button onClick={openRegistrationForm}>Sign In</button>}
       {showRegistrationForm && <RegistrationForm onClose={() => setShowRegistrationForm(false)} />}
     </nav>
   );
