@@ -1,10 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Make sure to import Switch and Route from react-router-dom
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./components/styles/App.css";
 import Store from "./components/Store";
 import Profile from "./components/ownSpace/Profile";
+import { getCurrentUser, updateUserSettings } from "./userService";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(getCurrentUser());
   return (
     <Router>
       <div className="App">

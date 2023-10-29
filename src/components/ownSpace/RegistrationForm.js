@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import UserClass from "../../classes/UserClass";
 import "./styles/RegistrationForm.css";
 import { useNavigate } from "react-router-dom";
+import users from "./usersData";
+import writeUsersToFile from "../../UpdateUsersJsonFile";
 
 const RegistrationForm = () => {
   const [name, setName] = useState("");
@@ -10,12 +12,6 @@ const RegistrationForm = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-
-  const mockUsers = [
-    new UserClass("user1", "password1", "user1@example.com"),
-    new UserClass("user2", "password2", "user2@example.com"),
-    new UserClass("user3", "password3", "user3@example.com"),
-  ];
 
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -27,11 +23,13 @@ const RegistrationForm = () => {
       } else if (!isValidEmail(email)) {
         setErrorMessage("Invalid email address.");
       } else {
-        const matchingUser = mockUsers.find((user) => user.name === name);
+        const matchingUser = users.find((user) => user.name === name);
         if (matchingUser) {
           setErrorMessage("Username already exists.");
         } else {
           const newUser = new UserClass(name, password, email);
+          users.push(newUser);
+          writeUsersToFile(users);
           console.log("New user registered:", newUser);
 
           setName("");
@@ -47,7 +45,7 @@ const RegistrationForm = () => {
       if (!name || !password) {
         setErrorMessage("Please fill in all fields.");
       } else {
-        const matchingUser = mockUsers.find((user) => user.name === name && user.password === password);
+        const matchingUser = users.find((user) => user.name === name && user.password === password);
         if (matchingUser) {
           console.log("Existing user logged in:", matchingUser);
           setName("");
@@ -63,7 +61,7 @@ const RegistrationForm = () => {
 
   const handleNameChange = (e) => {
     const enteredName = e.target.value;
-    setIsNewUser(!mockUsers.some((user) => user.name === enteredName));
+    setIsNewUser(!users.some((user) => user.name === enteredName));
     setName(enteredName);
   };
 

@@ -1,0 +1,15 @@
+[
+  {
+    "name": "User1",
+    "password": "password1",
+    "email": "user1@example.com",
+    "settings": {
+      "personalInfo": { "firstName": "John", "lastName": "Doe", "birthDate": "01/01/1990" },
+      "passwords": { "currentPassword": "password1", "newPassword": "", "confirmPassword": "" },
+      "preferences": {},
+      "notifications": {},
+      "more": { "darkMode": false },
+      "achievements": {}
+    }
+  }
+]

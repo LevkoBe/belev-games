@@ -1,0 +1,15 @@
+.setting-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  border-bottom: 1px solid #d3be82;
+}
+
+.setting-name {
+  display: flex;
+  align-items: center;
+  color: #d3be82;
+}
