@@ -4,7 +4,6 @@ import LocalStorageService from "../../LocalStorageService";
 
 const PasswordsSettings = () => {
   const user = LocalStorageService.getCurrentUser();
-  console.log(user);
   return (
     <div className="settings">
       <h2 className="settings">Passwords</h2>

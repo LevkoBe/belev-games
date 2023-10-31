@@ -1,0 +1,43 @@
+.achievement {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: #d3be82;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.achievement:hover {
+  background-color: #153009;
+  color: #d3be82;
+}
+
+.achievement-image {
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.achievement-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.achievement-details h3 {
+  color: #153009;
+}
+
+.achievement-details p {
+  color: #153009;
+}
+
+.achievement:hover .achievement-details h3 {
+  color: #d3be82;
+}
+
+.achievement:hover .achievement-details p {
+  color: #d3be82;
+}

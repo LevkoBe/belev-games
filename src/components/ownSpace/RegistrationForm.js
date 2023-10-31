@@ -31,7 +31,6 @@ const RegistrationForm = () => {
           LocalStorageService.setCurrentUser(newUser);
           const updatedUsers = allUsers.concat(newUser);
           LocalStorageService.saveAllUsers(updatedUsers);
-          console.log("New user registered:", newUser);
 
           setName("");
           setPassword("");
@@ -49,7 +48,6 @@ const RegistrationForm = () => {
         const matchingUser = allUsers.find((user) => user.name === name && user.password === password);
         if (matchingUser) {
           LocalStorageService.setCurrentUser(matchingUser);
-          console.log("Existing user logged in:", matchingUser);
           setName("");
           setPassword("");
           setErrorMessage("");

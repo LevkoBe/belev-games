@@ -20,7 +20,7 @@ class SettingsClass {
       darkMode: false,
     };
 
-    this.achievements = {};
+    this.achievements = [];
   }
 }
 

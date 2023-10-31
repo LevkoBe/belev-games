@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import "./settingsCommon.css";
 import LocalStorageService from "../../LocalStorageService";
+import cloneDeep from "lodash/cloneDeep";
+import PopUp from "./PopUp";
+import achievements from "../../lists/achievements";
 
 const PersonalInfoSettings = () => {
   const currentUser = LocalStorageService.getCurrentUser();
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [personalInfoSettings, setPersonalInfoSettings] = useState(currentUser.settings.personalInfo);
+  const newAchievement = achievements[0];
 
   const handleFirstNameChange = (e) => {
     const updatedPersonalInfo = { ...personalInfoSettings, firstName: e.target.value };
@@ -21,9 +26,30 @@ const PersonalInfoSettings = () => {
     setPersonalInfoSettings(updatedPersonalInfo);
   };
 
+  const checkAndAddAchievement = (newAchievement, updatedUser) => {
+    const hasAchievement = updatedUser.settings.achievements.some((achievement) => achievement.title === newAchievement.title);
+
+    if (!hasAchievement) {
+      updatedUser.settings.achievements.push(newAchievement);
+      return newAchievement;
+    }
+
+    return null;
+  };
+
   const handleSaveChanges = () => {
-    const updatedUser = { ...currentUser };
+    const updatedUser = cloneDeep(currentUser);
     updatedUser.settings.personalInfo = personalInfoSettings;
+
+    console.log(updatedUser);
+
+    const addedAchievement = checkAndAddAchievement(newAchievement, updatedUser);
+    if (addedAchievement) {
+      setIsPopupVisible(true);
+      setTimeout(() => setIsPopupVisible(false), 5000);
+    }
+
+    LocalStorageService.setCurrentUser(updatedUser);
 
     const allUsers = LocalStorageService.getAllUsers();
     const updatedAllUsers = allUsers.map((user) => (user.name === currentUser.name ? updatedUser : user));
@@ -52,6 +78,7 @@ const PersonalInfoSettings = () => {
         <input className="settings" type="date" id="birthDate" value={personalInfoSettings.birthDate} onChange={handleBirthDateChange} />
       </div>
       <button onClick={handleSaveChanges}>Save Changes</button>
+      {isPopupVisible && <PopUp achievement={newAchievement} image={newAchievement.image} duration={3000} onClose={() => setIsPopupVisible(false)} />}
     </div>
   );
 };
