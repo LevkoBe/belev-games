@@ -1,5 +1,5 @@
 import React from "react";
-import GameCell from "./games/GameCell";
+import GameCell from "./GameCell";
 import Title from "./Title";
 
 const Shelf = ({ activeCategory }) => {

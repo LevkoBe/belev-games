@@ -1,0 +1,85 @@
+.game-cell-extended-content {
+  background-color: #153009;
+  border-radius: 10px;
+  padding: 20px;
+  width: 60%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  color: #d3be82;
+}
+
+.game-cell-extended-content .extended-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.game-cell-extended-content h3 {
+  color: #d3be82;
+}
+
+.game-cell-extended-content p {
+  color: #d3be82;
+}
+
+.game-cell-extended-content .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.game-cell-extended-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  backdrop-filter: blur(8px);
+}
+
+.game-cell-extended {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #153009;
+  border-radius: 10px;
+  padding: 20px;
+  width: 60%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  color: #d3be82;
+  margin: 0 auto;
+}
+
+.game-cell-extended img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.joke {
+  color: #d3be82;
+  margin: 20px 0;
+}
+
+button {
+  background-color: #d3be82;
+  color: #153009;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #153009;
+  color: #d3be82;
+}
