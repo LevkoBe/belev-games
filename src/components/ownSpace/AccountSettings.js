@@ -18,7 +18,6 @@ const AccountSettings = ({ user, onSettingChoose }) => {
     <div className={`account-settings`} onClick={toggleVisibility}>
       <h2>Account settings</h2>
       <div className={`user-settings ${isVisible ? "" : "content-hidden"}`}>
-        <h3>{user.name}'s Settings</h3>
         <ul>
           <li onClick={handleItemClick}>Personal Info</li>
           <li onClick={handleItemClick}>Passwords</li>

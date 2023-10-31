@@ -20,7 +20,7 @@ const Navigation = () => {
     const confirmed = window.confirm("Are you sure you want to sign out?");
     if (confirmed) {
       LocalStorageService.setCurrentUser(null);
-      window.location.reload();
+      window.location.href = "/";
     }
   };
 
