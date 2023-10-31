@@ -5,12 +5,12 @@ import users from "../lists/users";
 import "./styles/Account.css";
 import Title from "../Title";
 
-const Account = () => {
+const Account = ({ onSettingChoose }) => {
   return (
     <div className="account-container">
       <Title title={"Profile"} />
       <hr />
-      <AccountSettings user={users[0]} />
+      <AccountSettings onSettingChoose={onSettingChoose} user={users[0]} />
       <hr />
       <Rooms user={users[0]} />
       <hr />

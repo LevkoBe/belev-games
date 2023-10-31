@@ -6,6 +6,12 @@
   margin: 10px;
   cursor: pointer;
   display: block;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.account-settings:hover {
+  background-color: #1a400d;
+  transform: scale(1.05);
 }
 
 .user-settings {
@@ -16,20 +22,27 @@
   margin: 10px;
   overflow: hidden;
   max-height: 1000px;
-  transition: max-height 1.5s ease;
+  transition: max-height 1.5s ease, padding 0.5s, margin 0.5s;
 }
 
 .user-settings ul {
   list-style: none;
   padding: 0;
+  transition: padding 0.5s, margin 0.5s;
 }
 
 .user-settings ul li {
   margin: 5px 0;
+  transition: color 0.3s;
+}
+
+.user-settings ul li:hover {
+  color: #a58d2e;
 }
 
 .content-hidden {
   max-height: 0;
   padding: 0;
   margin: 0;
+  transition: max-height 1s, padding 0.5s, margin 0.5s;
 }

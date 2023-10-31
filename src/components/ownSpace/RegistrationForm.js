@@ -12,7 +12,6 @@ const RegistrationForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const allUsers = LocalStorageService.getAllUsers();
-  console.log(allUsers);
 
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -49,6 +48,7 @@ const RegistrationForm = () => {
       } else {
         const matchingUser = allUsers.find((user) => user.name === name && user.password === password);
         if (matchingUser) {
+          LocalStorageService.setCurrentUser(matchingUser);
           console.log("Existing user logged in:", matchingUser);
           setName("");
           setPassword("");

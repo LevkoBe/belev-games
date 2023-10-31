@@ -1,0 +1,53 @@
+.settings div {
+  background-color: #153009;
+  color: #d3be82;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.settings h1,
+.settings h2,
+.settings h3,
+.settings h4 {
+  color: #d3be82;
+}
+
+.settings li {
+  margin: 10px 0;
+  transition: color 0.3s;
+}
+
+.settings label {
+  display: block;
+  transition: color 0.3s;
+}
+
+.settings input {
+  background-color: #fff4d3ba;
+  border: 2px double #153009;
+  border-radius: 10px;
+  color: #153009;
+  outline: none;
+  padding: 10px;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.settings div:hover {
+  background-color: #1a400d;
+  transform: scale(1.05);
+}
+
+.settings li:hover {
+  color: #ffcc00;
+}
+
+.settings label:hover {
+  color: #ffcc00;
+}
+
+.settings input:focus {
+  background-color: #fff;
+  border: 2px double #153009;
+}

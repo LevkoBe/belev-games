@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import "./styles/AccountSettings.css";
 
-const AccountSettings = ({ user }) => {
+const AccountSettings = ({ user, onSettingChoose }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
+  };
+
+  const handleItemClick = (e) => {
+    e.stopPropagation();
+    const selectedItem = e.target.textContent;
+    onSettingChoose(selectedItem);
   };
 
   return (
@@ -14,12 +20,12 @@ const AccountSettings = ({ user }) => {
       <div className={`user-settings ${isVisible ? "" : "content-hidden"}`}>
         <h3>{user.name}'s Settings</h3>
         <ul>
-          <li>Personal Info</li>
-          <li>Passwords</li>
-          <li>Preferences</li>
-          <li>Notifications</li>
-          <li>More (Mode: Dark/Light)</li>
-          <li>Achievements</li>
+          <li onClick={handleItemClick}>Personal Info</li>
+          <li onClick={handleItemClick}>Passwords</li>
+          <li onClick={handleItemClick}>Preferences</li>
+          <li onClick={handleItemClick}>Notifications</li>
+          <li onClick={handleItemClick}>More (Mode: Dark/Light)</li>
+          <li onClick={handleItemClick}>Achievements</li>
         </ul>
       </div>
     </div>
