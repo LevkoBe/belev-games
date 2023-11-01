@@ -7,6 +7,7 @@
   text-align: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   color: #d3be82;
+  cursor: pointer;
 }
 
 .game-cell-extended-content .extended-content {

@@ -1,10 +1,24 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Make sure to import Switch and Route from react-router-dom
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./components/styles/App.css";
 import Store from "./components/Store";
 import Profile from "./components/ownSpace/Profile";
+import LocalStorageService from "./components/LocalStorageService";
 
 function App() {
+  const currentUser = LocalStorageService.getCurrentUser();
+
+  useEffect(() => {
+    let fontFamily = "Libre Baskerville";
+    if (!!currentUser) {
+      fontFamily = currentUser.settings.preferences.fontFamily;
+    }
+    let elements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, button, input");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.fontFamily = fontFamily;
+    }
+  }, [currentUser]);
+
   return (
     <Router>
       <div className="App">

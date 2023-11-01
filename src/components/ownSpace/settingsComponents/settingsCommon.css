@@ -51,3 +51,28 @@
   background-color: #fff;
   border: 2px double #153009;
 }
+
+.settings ul {
+  list-style: none;
+  padding: 0;
+}
+
+.settings li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d3be82;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.settings li:hover {
+  background-color: #1a400d;
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+.settings button:hover {
+  background-color: #153009;
+  color: #d3be82;
+}

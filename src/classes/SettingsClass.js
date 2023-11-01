@@ -12,7 +12,9 @@ class SettingsClass {
       confirmPassword: "",
     };
 
-    this.preferences = {};
+    this.preferences = {
+      fontFamily: "Libre Baskerville",
+    };
 
     this.notifications = {};
 
