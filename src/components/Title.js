@@ -11,10 +11,9 @@ const Title = ({ title = "", scaleDown = 1, onTitleClick = null }) => {
     imageStyle.cursor = "pointer";
   }
 
-  // Remove the () after handleClick
   function handleClick() {
     if (onTitleClick != null) {
-      onTitleClick(null); // no category
+      onTitleClick(null);
     }
   }
 

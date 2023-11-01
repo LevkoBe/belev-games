@@ -68,18 +68,3 @@
   color: #d3be82;
   margin: 20px 0;
 }
-
-button {
-  background-color: #d3be82;
-  color: #153009;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: #153009;
-  color: #d3be82;
-}

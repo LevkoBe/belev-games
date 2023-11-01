@@ -11,26 +11,33 @@ import AchievementsSettings from "./settingsComponents/AchievementsSettings";
 
 const Profile = () => {
   const [currentSettingComponent, setComp] = useState(null);
+  const [currentTitle, setTitle] = useState("Here you can set everything you want for your account!");
 
   const handleSettingChoose = (selectedSetting) => {
     switch (selectedSetting) {
       case "Personal Info":
         setComp(<PersonalInfoSettings />);
+        setTitle("Personal Info");
         break;
       case "Passwords":
         setComp(<PasswordsSettings />);
+        setTitle("Passwords");
         break;
       case "Preferences":
         setComp(<PreferencesSettings />);
+        setTitle("Preferences");
         break;
       case "Notifications":
         setComp(<NotificationsSettings />);
+        setTitle("Notifications");
         break;
       case "More (Mode: Dark/Light)":
         setComp(<MoreSettings />);
+        setTitle("More (Mode etc)");
         break;
       case "Achievements":
         setComp(<AchievementsSettings />);
+        setTitle("Achievements");
         break;
       default:
         setComp(null);
@@ -46,7 +53,7 @@ const Profile = () => {
           <Account onSettingChoose={handleSettingChoose} />
         </div>
         <div style={{ flex: "70%" }}>
-          <House component={currentSettingComponent} />
+          <House component={currentSettingComponent} title={currentTitle} />
         </div>
       </div>
     </>

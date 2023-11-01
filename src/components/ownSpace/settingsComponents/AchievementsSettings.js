@@ -7,8 +7,7 @@ const AchievementsSettings = () => {
   const achievements = LocalStorageService.getCurrentUser().settings.achievements;
 
   return (
-    <div className="settings">
-      <h2 className="settings">Achievements</h2>
+    <div>
       {achievements.map((achievement, index) => (
         <Achievement key={index} title={achievement.title} image={achievement.image} description={achievement.description} />
       ))}

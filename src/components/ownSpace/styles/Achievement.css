@@ -5,12 +5,13 @@
   padding: 10px;
   background-color: #d3be82;
   border-radius: 10px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.5s;
 }
 
 .achievement:hover {
   background-color: #153009;
   color: #d3be82;
+  transform: scale(1.05);
 }
 
 .achievement-image {
