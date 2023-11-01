@@ -21,6 +21,11 @@ const achievements = [
     "You've created a room. It's your own space now!",
     "https://res.cloudinary.com/dbkotg0js/image/upload/v1698766679/belev-games/doors-1767563_640_yzomug.jpg"
   ),
+  new Achievement(
+    "Protector",
+    "Your security level is unbelievable!",
+    "https://res.cloudinary.com/dbkotg0js/image/upload/v1698835755/belev-games/castle-1083570_640_we76od.pnghttps://res.cloudinary.com/dbkotg0js/image/upload/v1698835755/belev-games/castle-1083570_640_we76od.png"
+  ),
 ];
 
 export default achievements;

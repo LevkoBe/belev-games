@@ -58,7 +58,6 @@ const PersonalInfoSettings = () => {
 
   return (
     <div className="settings">
-      <h2 className="settings">Personal Info</h2>
       <div className="settings">
         <label className="settings" htmlFor="firstName">
           First Name:
