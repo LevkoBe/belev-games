@@ -26,6 +26,10 @@ const PreferencesSettings = ({ settings, handleSettingsChange }) => {
       fontFamily = currentUser.settings.preferences.fontFamily;
     }
     document.body.style.fontFamily = fontFamily;
+
+    document.querySelectorAll("button").forEach((button) => {
+      button.style.fontFamily = fontFamily;
+    });
   };
 
   return (

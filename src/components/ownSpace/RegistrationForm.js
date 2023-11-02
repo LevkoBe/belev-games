@@ -51,7 +51,11 @@ const RegistrationForm = () => {
           setName("");
           setPassword("");
           setErrorMessage("");
-          document.body.style.fontFamily = matchingUser.settings.preferences.fontFamily;
+          let fontFamily = matchingUser.settings.preferences.fontFamily;
+          document.body.style.fontFamily = fontFamily;
+          document.querySelectorAll("button").forEach((button) => {
+            button.style.fontFamily = fontFamily;
+          });
           navigate("/profile");
         } else {
           setErrorMessage("Invalid username or password.");
