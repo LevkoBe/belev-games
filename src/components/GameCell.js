@@ -9,39 +9,30 @@ import RegistrationForm from "./ownSpace/RegistrationForm";
 const GameCell = ({ game }) => {
   const [isExtendedVisible, setExtendedVisible] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [isGameSaved, setIsGameSaved] = useState(LocalStorageService.getCurrentUser()?.rooms.some((room) => room.games.some((savedGame) => savedGame.title === game.title)));
 
   const currentUser = LocalStorageService.getCurrentUser();
-
-  const isGameSaved = currentUser?.rooms.some((room) => room.games.some((savedGame) => savedGame.title === game.title));
 
   const toggleExtended = () => {
     setExtendedVisible(!isExtendedVisible);
   };
 
-  const handleGameSave = () => {
+  const handleGameToggle = (e) => {
+    e.stopPropagation();
     if (!currentUser) {
       setShowForm(true);
       return;
     }
 
-    if (!isGameSaved) {
+    if (isGameSaved) {
+      currentUser.rooms.forEach((room) => {
+        room.games = room.games.filter((savedGame) => savedGame.title !== game.title);
+      });
+    } else {
       currentUser.rooms[0].games.push(game);
-      LocalStorageService.setCurrentUser(currentUser);
-      const allUsers = LocalStorageService.getAllUsers();
-      const updatedAllUsers = allUsers.map((us) => (us.name === currentUser.name ? currentUser : us));
-      LocalStorageService.saveAllUsers(updatedAllUsers);
-    }
-  };
-
-  const handleGameDelete = () => {
-    if (!currentUser) {
-      return;
     }
 
-    currentUser.rooms.forEach((room) => {
-      room.games = room.games.filter((savedGame) => savedGame.title !== game.title);
-    });
-
+    setIsGameSaved(!isGameSaved);
     LocalStorageService.setCurrentUser(currentUser);
     const allUsers = LocalStorageService.getAllUsers();
     const updatedAllUsers = allUsers.map((us) => (us.name === currentUser.name ? currentUser : us));
@@ -58,12 +49,7 @@ const GameCell = ({ game }) => {
         </div>
         <div className="game-buttons">
           {isGameSaved ? <FontAwesomeIcon icon={faDotCircle} style={{ color: "#153009" }} /> : <FontAwesomeIcon icon={faCircle} style={{ color: "#153009" }} />}
-          <button onClick={handleGameSave}>
-            <FontAwesomeIcon icon={faPlus} />
-          </button>
-          <button onClick={handleGameDelete}>
-            <FontAwesomeIcon icon={faTrash} />
-          </button>
+          <button onClick={(e) => handleGameToggle(e)}>{isGameSaved ? <FontAwesomeIcon icon={faTrash} /> : <FontAwesomeIcon icon={faPlus} />}</button>
           <button>
             <FontAwesomeIcon icon={faHeart} />
           </button>
