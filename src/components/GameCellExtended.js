@@ -3,15 +3,15 @@ import axios from "axios";
 import "./styles/GameCellExtended.css";
 
 const GameCellExtended = ({ game, onClose }) => {
-  const [joke, setJoke] = useState(
-    "Four engineers get into a car. The car won't start. The Mechanical engineer says 'It's a broken starter'. The Electrical engineer says 'Dead battery'. The Chemical engineer says 'Impurities in the gasoline'. The IT engineer says 'Hey guys, I have an idea: How about we all get out of the car and get back in'."
-  );
+  const joke_1 =
+    "Four engineers get into a car. The car won't start. The Mechanical engineer says 'It's a broken starter'. The Electrical engineer says 'Dead battery'. The Chemical engineer says 'Impurities in the gasoline'. The IT engineer says 'Hey guys, I have an idea: How about we all get out of the car and get back in'.";
+  const [joke, setJoke] = useState(joke_1);
 
   useEffect(() => {
     try {
       axios.get("https://v2.jokeapi.dev/joke/Programming").then((response) => {
         const { joke } = response.data;
-        setJoke(joke || "Failed to fetch joke.");
+        setJoke(joke || joke_1);
       });
     } catch (error) {}
   }, []);

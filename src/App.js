@@ -13,10 +13,7 @@ function App() {
     if (!!currentUser) {
       fontFamily = currentUser.settings.preferences.fontFamily;
     }
-    let elements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, button, input");
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].style.fontFamily = fontFamily;
-    }
+    document.body.style.fontFamily = fontFamily;
   }, [currentUser]);
 
   return (
