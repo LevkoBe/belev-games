@@ -15,7 +15,7 @@ const Rooms = ({ user }) => {
         <h3>{user.name}'s Rooms</h3>
         <ul>
           {user.rooms.map((room, roomIndex) => (
-            <li key={roomIndex}>{room}</li>
+            <li key={roomIndex}>{room.title}</li>
           ))}
         </ul>
       </div>
