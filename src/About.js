@@ -13,9 +13,9 @@ const About = () => {
         <h2>Contact Us</h2>
         <p>If you have any questions or inquiries, feel free to contact us:</p>
         <ul>
-          <li>Email: your@email.com</li>
-          <li>Phone: (123) 456-7890</li>
-          <li>Address: 123 Main Street, City, Country</li>
+          <li>Email: lbeniakh@kse.org.ua</li>
+          <li>Phone: (099) 412-1464</li>
+          <li>Address: Mykoly Shpaka St, 3</li>
         </ul>
         <h2>Our Location</h2>
         <p>Find us on the map:</p>
