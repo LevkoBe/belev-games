@@ -10,7 +10,7 @@ const Account = ({ onSettingChoose }) => {
 
   return (
     <div className="account-container">
-      <Title title={"Profile"} />
+      <Title title={"Profile"} onTitleClick={onSettingChoose} />
       <hr />
       <AccountSettings onSettingChoose={onSettingChoose} user={currentUser} />
       <hr />
