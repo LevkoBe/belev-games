@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./styles/CreateGameTable.css";
+import { solve } from "./tableCalculations";
 
 const Table = ({ rows, cols }) => {
-  const [tableData, setTableData] = useState(new Array(rows).fill([]).map(() => new Array(cols).fill("")));
+  const [tableData, setTableData] = useState(new Array(rows).fill([]).map(() => new Array(cols).fill(1)));
   const [numCols, setNumCols] = useState(cols);
+  const [sum, setSum] = useState(1);
 
   const addRow = () => {
-    setTableData([...tableData, new Array(numCols).fill("")]);
+    setTableData([...tableData, new Array(numCols).fill(1)]);
   };
 
   const removeRow = () => {
@@ -19,7 +21,7 @@ const Table = ({ rows, cols }) => {
 
   const addColumn = () => {
     setNumCols(numCols + 1);
-    setTableData(tableData.map((row) => [...row, ""]));
+    setTableData(tableData.map((row) => [...row, 1]));
   };
 
   const removeColumn = () => {
@@ -35,6 +37,11 @@ const Table = ({ rows, cols }) => {
     const updatedTableData = [...tableData];
     updatedTableData[rowIndex][colIndex] = value;
     setTableData(updatedTableData);
+  };
+
+  const calculate = () => {
+    const calculatedSum = solve(tableData);
+    setSum(calculatedSum);
   };
 
   return (
@@ -59,7 +66,9 @@ const Table = ({ rows, cols }) => {
         <button onClick={removeRow}>Remove Row</button>
         <button onClick={addColumn}>Add Column</button>
         <button onClick={removeColumn}>Remove Column</button>
+        <button onClick={calculate}>Calculate</button>
       </div>
+      <div className="result">Roots: {sum}</div>
     </div>
   );
 };

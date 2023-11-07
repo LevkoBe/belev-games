@@ -16,7 +16,7 @@ table td {
 }
 
 table input {
-  width: 30px;
+  width: 50px;
 }
 
 @media screen and (min-width: 1700px) and (max-width: 1800px) {
